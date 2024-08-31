@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The New Old Fashioned - Cocktail Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
+
+    <style>
+        /* Seat grid container */
+        .seat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 10px; /* Space between seats */
+            max-width: 300px; /* Limit width */
+            margin: auto; /* Center grid */
+        }
+
+        /* Individual seat styles */
+        .seat {
+            width: 50px;
+            height: 50px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        /* Seat hover effect */
+        .seat:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Selected seat style */
+        .seat.selected {
+            background-color: #2980b9; /* Darker blue */
+            color: white;
+            border: 1px solid #1c5a91; /* Darker border */
+        }
+
+        /* Schedule table */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .schedule-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        .schedule-table td {
+            background-color: #f9f9f9;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .seat-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+                <li><a href="#live-queue">Live Queue</a></li>
+                <li><a href="#whos-working">Who's Working</a></li>
+                <li><a href="#membership">Membership</a></li>
+                <li><a href="#digital-concerts">Digital Concerts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <img src="TNOF1.png" alt="The New Old Fashioned">
+
+    <main>
+        <section id="home">
+            <h1>The New Old Fashioned</h1>
+            <p>Welcome to our cocktail bar. Experience the perfect blend of classic and modern.</p>
+        </section>
+
+        <section id="reservations">
+            <h2>Make a Reservation</h2>
+            <p>Select up to 2 seats:</p>
+            <div class="seat-grid">
+                <div class="seat" data-seat="1">1</div>
+                <div class="seat" data-seat="2">2</div>
+                <div class="seat" data-seat="3">3</div>
+                <div class="seat" data-seat="4">4</div>
+                <div class="seat" data-seat="5">5</div>
+                <div class="seat" data-seat="6">6</div>
+            </div>
+            <button id="reserve-seat">Reserve Selected Seats</button>
+        
+            <div id="phone-number-section" style="display:none;">
+                <p>Please enter your phone number to complete the reservation:</p>
+                <input type="tel" id="phone-number" placeholder="Your phone number">
+                <button id="submit-reservation">Submit Reservation</button>
+            </div>
+        </section>
+        
+
+        <section id="live-queue">
+            <h2>Live Queue</h2>
+            <!-- Live queue information will be dynamically inserted here -->
+        </section>
+
+        <section id="whos-working">
+            <h2>Who's Working</h2>
+            <p>Here is the schedule for our bartenders this week:</p>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Monica</th>
+                        <th>Sue</th>
+                        <th>Luke</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>3 PM - 11 PM</td>
+                        <td>Off</td>
+                        <td>5 PM - 11 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Off</td>
+                        <td>3 PM - 11 PM</td>
+                        <td>5 PM - 11 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>3 PM - 11 PM</td>
+                        <td>3 PM - 11 PM</td>
+                        <td>Off</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>5 PM - 11 PM</td>
+                        <td>3 PM - 11 PM</td>
+                        <td>3 PM - 11 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>3 PM - 11 PM</td>
+                        <td>Off</td>
+                        <td>5 PM - 11 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>3 PM - 11 PM</td>
+                        <td>5 PM - 11 PM</td>
+                        <td>Off</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>Off</td>
+                        <td>3 PM - 11 PM</td>
+                        <td>3 PM - 11 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="membership">
+            <h2>Membership</h2>
+            <p>Join our exclusive membership program for special benefits and discounts.</p>
+            <button id="learn-more">Learn More</button>
+        </section>
+
+        <section id="digital-concerts">
+            <h2>Digital Concerts</h2>
+            <p>Enjoy live music from the comfort of your home with our digital concerts.</p>
+
+            <section id="upcoming-concerts">
+                <h3>Upcoming Concerts</h3>
+                <!-- This section would be populated dynamically with concert information -->
+                <div class="concert-grid">
+                    <!-- Example concert item -->
+                    <div class="concert-item">
+                        <img src="/BOWIE1.jpg" alt="Concert thumbnail">
+                        <h3>David Bowie</h3>
+                        <p>Date: July 15, 2024</p>
+                        <p>Time: 8:00 PM</p>
+                        <button class="buy-ticket">Buy Ticket</button>
+                    </div>
+                    <!-- More concert items would be added here -->
+                </div>
+            </section>
+
+            <section id="how-it-works">
+                <h3>How It Works</h3>
+                <ol>
+                    <li>Purchase a digital ticket</li>
+                    <li>Receive a unique access code</li>
+                    <li>Log in to our streaming platform on the day of the event</li>
+                    <li>Enjoy the live concert!</li>
+                </ol>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 The New Old Fashioned

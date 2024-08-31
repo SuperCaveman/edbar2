@@ -1,0 +1,204 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+h2 {
+    font-size: 2em;
+    color: #34495e;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1em 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #34495e;
+}
+
+/* Main content */
+main {
+    padding: 2em 0;
+}
+
+section {
+    background-color: #fff;
+    margin-bottom: 2em;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+/* Forms */
+form {
+    display: grid;
+    gap: 1em;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #bdc3c7;
+    border-radius: 3px;
+}
+
+/* Live Queue */
+.queue-list {
+    list-style-type: none;
+}
+
+.queue-item {
+    background-color: #ecf0f1;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    border-radius: 3px;
+}
+
+/* Membership */
+.membership-benefits {
+    list-style-type: none;
+    margin-bottom: 1em;
+}
+
+.membership-benefits li {
+    margin-bottom: 0.5em;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.membership-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #27ae60;
+}
+
+/* Digital Concerts */
+.concert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+}
+
+.concert-item {
+    background-color: #ecf0f1;
+    padding: 1em;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.concert-item img {
+    max-width: 100%;
+    border-radius: 3px;
+    margin-bottom: 1em;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 0.5em;
+    }
+
+    .concert-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Selected seat style */
+.seat.selected {
+    background-color: #2980b9; /* Darker blue */
+    color: white;
+    border: 1px solid #1c5a91; /* Darker border */
+}
